@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="hr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sarvaš - Povijest i sjećanje</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Georgia', serif;
+            background-color: #1a1a1a;
+            color: #eaeaea;
+            overflow-x: hidden;
+        }
+
+        /* Hero Section with Smoke Effect */
+        .hero {
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+            text-align: center;
+            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.9)), 
+                        url('https://images.unsplash.com/photo-1519074069444-1ba4fff66d16?ixlib=rb-1.2.1&auto=format&fit=crop&w=1920&q=80') center/cover;
+            overflow: hidden;
+        }
+
+        .hero h1 {
+            font-size: 4rem;
+            margin-bottom: 20px;
+            z-index: 2;
+            text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.8);
+            color: #d1bfae;
+        }
+
+        .hero p {
+            font-size: 1.5rem;
+            z-index: 2;
+            max-width: 800px;
+            text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.8);
+        }
+
+        /* Smoke Animation */
+        .smoke {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('https://raw.githubusercontent.com/danielstuart14/CSS_FOG_ANIMATION/master/fog1.png') repeat-x;
+            background-size: 200% 100%;
+            opacity: 0.4;
+            animation: moveSmoke 60s linear infinite;
+            z-index: 1;
+            pointer-events: none;
+        }
+
+        .smoke2 {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('https://raw.githubusercontent.com/danielstuart14/CSS_FOG_ANIMATION/master/fog2.png') repeat-x;
+            background-size: 200% 100%;
+            opacity: 0.3;
+            animation: moveSmoke 40s linear infinite;
+            z-index: 1;
+            pointer-events: none;
+        }
+
+        @keyframes moveSmoke {
+            0% { background-position: 0 0; }
+            100% { background-position: -200% 0; }
+        }
+
+        /* Sparks Animation */
+        .spark {
+            position: absolute;
+            width: 3px;
+            height: 3px;
+            background-color: #ff9d00;
+            border-radius: 50%;
+            box-shadow: 0 0 10px #ff9d00, 0 0 20px #ff0000;
+            opacity: 0;
+            z-index: 1;
+        }
+
+        @keyframes flySpark {
+            0% { transform: translateY(0) translateX(0); opacity: 1; }
+            100% { transform: translateY(-200px) translateX(50px); opacity: 0; }
+        }
+
+        /* Timeline Section */
+        .timeline {
+            padding: 100px 20px;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .timeline-item {
+            margin-bottom: 80px;
+            opacity: 0;
+            transform: translateY(50px);
+            transition: all 1s ease;
+            display: flex;
+            align-items: center;
+        }
+
+        .timeline-item.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .year {
+            font-size: 3rem;
+            font-weight: bold;
+            color: #8c2a2a;
+            width: 150px;
+            flex-shrink: 0;
+            text-shadow: 1px 1px 3px rgba(0,0,0,0.5);
+        }
+
+        .content {
+            background: rgba(30, 30, 30, 0.8);
+            padding: 30px;
+            border-left: 4px solid #8c2a2a;
+            border-radius: 0 10px 10px 0;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+        }
+
+        .content h2 {
+            margin-top: 0;
+            color: #d1bfae;
+        }
+
+        .content p {
+            line-height: 1.6;
+        }
+
+        /* Conclusion Section */
+        .conclusion {
+            text-align: center;
+            padding: 100px 20px;
+            background-color: #0a0a0a;
+            border-top: 1px solid #333;
+        }
+
+        .conclusion h2 {
+            font-size: 2.5rem;
+            color: #d1bfae;
+            margin-bottom: 20px;
+        }
+
+        .conclusion p {
+            font-size: 1.2rem;
+            max-width: 800px;
+            margin: 0 auto;
+            line-height: 1.8;
+            color: #aaa;
+        }
+
+        .footer {
+            text-align: center;
+            padding: 20px;
+            background: #000;
+            font-size: 0.9rem;
+        }
+        .footer a {
+            color: #8c2a2a;
+            text-decoration: none;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="hero" id="hero">
+        <div class="smoke"></div>
+        <div class="smoke2"></div>
+        <h1>Sarvaš: Ožiljci i Nada</h1>
+        <p>Priča o župnoj crkvi Rođenja sv. Ivana Krstitelja – prvoj srušenoj crkvi u Domovinskom ratu, čija povijest svjedoči da rat nikome ne donosi dobro.</p>
+    </div>
+
+    <div class="timeline">
+        <div class="timeline-item">
+            <div class="year">1774.</div>
+            <div class="content">
+                <h2>Izgradnja crkve</h2>
+                <p>Izgrađena je crkva Rođenja sv. Ivana Krstitelja, koja je stoljećima bila duhovni centar i mjesto okupljanja u Sarvašu, preživjevši mnoge nedaće sve do kraja 20. stoljeća.</p>
+            </div>
+        </div>
+
+        <div class="timeline-item">
+            <div class="year">1991.</div>
+            <div class="content">
+                <h2>Početak agresije i pad mjesta</h2>
+                <p>Sarvaš doživljava prvo granatiranje. 1. kolovoza 1991. izveden je težak napad iz Bijelog Brda. Tenkovskom granatom pogođen je i srušen crkveni toranj. Mještani su u nevjerici promatrali stradanje svog svetišta s aljmaškog šlepa. Hrvatsko stanovništvo je protjerano, a mjesto pod okupacijom preimenovano u Jelenovo. Pad Sarvaša dogodio se 17. rujna 1991.</p>
+                <div style="margin-top: 15px; background: #000; padding: 10px; text-align:center; font-style:italic;">
+                    <!-- Ovdje dodajete iframe od YouTube videa rušenja (ako imate točan link, npr: <iframe width="100%" height="315" src="https://www.youtube.com/embed/VAS_VIDEO_ID" frameborder="0" allowfullscreen></iframe>) -->
+                    [Ovdje se može umetnuti video zapis rušenja crkve iz arhive]
+                </div>
+            </div>
+        </div>
+
+        <div class="timeline-item">
+            <div class="year">1991-95.</div>
+            <div class="content">
+                <h2>Godine progonstva</h2>
+                <p>Dok su sarvašani bili u prognaništvu, crkva je ležala u ruševinama. Postala je tragičan simbol prve potpuno uništene katoličke crkve u Domovinskom ratu.</p>
+            </div>
+        </div>
+
+        <div class="timeline-item">
+            <div class="year">1998+</div>
+            <div class="content">
+                <h2>Mirna reintegracija i povratak</h2>
+                <p>Nakon mirne reintegracije, stanovnici se vraćaju na svoja ognjišta. Mjestu je vraćeno povijesno ime Sarvaš. Započinje dugotrajna i emotivna obnova, kamen po kamen.</p>
+            </div>
+        </div>
+
+        <div class="timeline-item">
+            <div class="year">2003.</div>
+            <div class="content">
+                <h2>Papin blagoslov</h2>
+                <p>Tijekom svog posjeta Osijeku, 7. lipnja 2003., papa Ivan Pavao II. blagoslovio je kamen za obnovu prve srušene crkve u Domovinskom ratu, davši time nadu i snagu za povratak života.</p>
+            </div>
+        </div>
+
+        <div class="timeline-item">
+            <div class="year">Danas</div>
+            <div class="content">
+                <h2>Obnovljena vjera i pouka</h2>
+                <p>Danas, obnovljena župna crkva stoji kao svjedok vremena. Ona nas podsjeća na pretrpljene patnje, ali i na činjenicu da iz pepela može niknuti novi život. Obilježavanje obljetnica rušenja svake godine (1. kolovoza) okuplja mještane u molitvi i sjećanju.</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="conclusion">
+        <h2>Rat ne donosi dobro nikome</h2>
+        <p>Ruševine crkava, uništeni domovi i izgubljeni životi trajni su podsjetnik na besmisao rata. Priča o Sarvašu nije samo priča o razaranju, već i o snazi obnove, opraštanju i gradnji mira za generacije koje dolaze. Neka sjećanje na prošlost bude temelj na kojem gradimo bolju i mirniju budućnost.</p>
+    </div>
+
+    <div class="footer">
+        <p>Više informacija potražite na portalu <a href="https://www.sarvas.info" target="_blank">www.sarvas.info</a></p>
+    </div>
+
+    <script>
+        // Scroll Animation for Timeline
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, { threshold: 0.2 });
+
+        document.querySelectorAll('.timeline-item').forEach(item => {
+            observer.observe(item);
+        });
+
+        // Sparks Generator
+        const hero = document.getElementById('hero');
+        setInterval(() => {
+            const spark = document.createElement('div');
+            spark.classList.add('spark');
+            spark.style.left = Math.random() * 100 + 'vw';
+            spark.style.bottom = '0';
+            spark.style.animation = `flySpark ${Math.random() * 3 + 2}s linear`;
+            hero.appendChild(spark);
+
+            setTimeout(() => {
+                spark.remove();
+            }, 5000);
+        }, 100);
+    </script>
+</body>
+</html>
